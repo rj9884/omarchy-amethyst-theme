@@ -38,3 +38,6 @@ background = "#313244"
 [colors.vi_mode_cursor]
 text   = "#11111b"
 cursor = "#cba6f7"
+
+[cursor]
+style = "Beam"
