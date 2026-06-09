@@ -1,103 +1,103 @@
 {
     "$schema": "vscode://schemas/color-theme",
-    "name": "Omarchy Macchiato",
+    "name": "Omarchy Amethyst",
     "type": "dark",
     "colors": {
-        // --- Base Colors ---
-        "foreground": "#cad3f5",
-        "disabledForeground": "#5b6078",
-        "widget.shadow": "#181926",
-        "selection.background": "#5b6078",
-        "descriptionForeground": "#9399b2",
-        "errorForeground": "#ed8796",
-        "icon.foreground": "#be9aee",
+        "foreground": "#cdd6f4",
+        "disabledForeground": "#585b70",
+        "widget.shadow": "#11111b",
+        "selection.background": "#585b70",
+        "descriptionForeground": "#a6adc8",
+        "errorForeground": "#f38ba8",
+        "icon.foreground": "#cba6f7",
 
-        // --- Window & Action Colors ---
-        "window.activeBorder": "#be9aee",
-        "button.background": "#be9aee",
-        "button.foreground": "#1e2030",
-        "button.hoverBackground": "#c29df2",
+        "window.activeBorder": "#cba6f7",
+        "button.background": "#cba6f7",
+        "button.foreground": "#11111b",
+        "button.hoverBackground": "#d4bff9",
 
-        // --- Editor Colors ---
-        "editor.background": "#24273a",
-        "editor.foreground": "#cad3f5",
-        "editorLineNumber.foreground": "#5b6078",
-        "editorLineNumber.activeForeground": "#be9aee",
-        "editorCursor.foreground": "#f4dbd6",
-        "editor.selectionBackground": "#5b607860",
-        "editor.lineHighlightBackground": "#363a4f",
-        "editorIndentGuide.background": "#494d64",
-        "editorIndentGuide.activeBackground": "#be9aee",
+        "editor.background": "#1e1e2e",
+        "editor.foreground": "#cdd6f4",
+        "editorLineNumber.foreground": "#585b70",
+        "editorLineNumber.activeForeground": "#cba6f7",
+        "editorCursor.foreground": "#cba6f7",
+        "editor.selectionBackground": "#585b7060",
+        "editor.lineHighlightBackground": "#313244",
+        "editorIndentGuide.background": "#45475a",
+        "editorIndentGuide.activeBackground": "#cba6f7",
 
-        // --- Sidebar & Activity Bar ---
-        "activityBar.background": "#1e2030",
-        "activityBar.foreground": "#be9aee",
-        "activityBar.inactiveForeground": "#5b6078",
-        "activityBarBadge.background": "#be9aee",
-        "activityBarBadge.foreground": "#1e2030",
+        "activityBar.background": "#11111b",
+        "activityBar.foreground": "#cba6f7",
+        "activityBar.inactiveForeground": "#585b70",
+        "activityBarBadge.background": "#cba6f7",
+        "activityBarBadge.foreground": "#11111b",
 
-        "sideBar.background": "#1e2030",
-        "sideBar.foreground": "#cad3f5",
-        "sideBarTitle.foreground": "#be9aee",
-        "sideBarSectionHeader.background": "#1e2030",
-        "sideBarSectionHeader.foreground": "#cad3f5",
+        "sideBar.background": "#11111b",
+        "sideBar.foreground": "#cdd6f4",
+        "sideBarTitle.foreground": "#cba6f7",
+        "sideBarSectionHeader.background": "#11111b",
+        "sideBarSectionHeader.foreground": "#cdd6f4",
 
-        // --- Tabs ---
-        "editorGroupHeader.tabsBackground": "#181926",
-        "tab.activeBackground": "#24273a",
-        "tab.activeForeground": "#be9aee",
-        "tab.inactiveBackground": "#1e2030",
-        "tab.inactiveForeground": "#5b6078",
-        "tab.activeBorder": "#be9aee",
+        "editorGroupHeader.tabsBackground": "#11111b",
+        "tab.activeBackground": "#1e1e2e",
+        "tab.activeForeground": "#cba6f7",
+        "tab.inactiveBackground": "#11111b",
+        "tab.inactiveForeground": "#585b70",
+        "tab.activeBorder": "#cba6f7",
 
-        // --- Status Bar ---
-        "statusBar.background": "#181926",
-        "statusBar.foreground": "#cad3f5",
-        "statusBarItem.remoteBackground": "#be9aee",
-        "statusBarItem.remoteForeground": "#1e2030",
+        "statusBar.background": "#11111b",
+        "statusBar.foreground": "#cdd6f4",
+        "statusBarItem.remoteBackground": "#cba6f7",
+        "statusBarItem.remoteForeground": "#11111b",
 
-        // --- Terminal ---
-        "terminal.background": "#24273a",
-        "terminal.ansiBlack": "#494d64",
-        "terminal.ansiRed": "#ed8796",
-        "terminal.ansiGreen": "#a6da95",
-        "terminal.ansiYellow": "#eed49f",
-        "terminal.ansiBlue": "#8aadf4",
-        "terminal.ansiMagenta": "#f5bde6",
-        "terminal.ansiCyan": "#8bd5ca",
-        "terminal.ansiWhite": "#b8c0e0",
-        "terminal.ansiBrightMagenta": "#be9aee"
+        "terminal.background": "#1e1e2e",
+        "terminal.ansiBlack": "#45475a",
+        "terminal.ansiRed": "#f38ba8",
+        "terminal.ansiGreen": "#cba6f7",
+        "terminal.ansiYellow": "#f9e2af",
+        "terminal.ansiBlue": "#89b4fa",
+        "terminal.ansiMagenta": "#cba6f7",
+        "terminal.ansiCyan": "#b4befe",
+        "terminal.ansiWhite": "#cdd6f4",
+        "terminal.ansiBrightBlack": "#585b70",
+        "terminal.ansiBrightRed": "#f38ba8",
+        "terminal.ansiBrightGreen": "#cba6f7",
+        "terminal.ansiBrightYellow": "#fab387",
+        "terminal.ansiBrightBlue": "#89b4fa",
+        "terminal.ansiBrightMagenta": "#cba6f7",
+        "terminal.ansiBrightCyan": "#b4befe",
+        "terminal.ansiBrightWhite": "#a6adc8"
     },
     "tokenColors": [
         {
             "scope": ["comment", "punctuation.definition.comment"],
             "settings": {
-                "foreground": "#6e738d",
+                "foreground": "#585b70",
                 "fontStyle": "italic"
             }
         },
         {
             "scope": "keyword",
             "settings": {
-                "foreground": "#c6a0f6"
+                "foreground": "#cba6f7"
             }
         },
         {
             "scope": "string",
             "settings": {
-                "foreground": "#a6da95"
+                "foreground": "#b4befe"
             }
         },
         {
             "scope": "entity.name.function",
             "settings": {
-                "foreground": "#8aadf4"
+                "foreground": "#89b4fa"
             }
         },
         {
             "scope": "variable",
             "settings": {
-                "foreground": "#cad3f5"
+                "foreground": "#cdd6f4"
             }
         }
     ]
