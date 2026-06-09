@@ -34,14 +34,14 @@
 ### Desktop & Workflow
 
 <p align="center">
-  <img width="2880" height="1800" alt="preview-01" src="https://github.com/user-attachments/assets/ed6d7123-aba5-49d0-9c4a-ba857a1459ec" width="48%"/>
-  <img width="2878" height="1800" alt="preview-02" src="https://github.com/user-attachments/assets/a60e583d-c956-4461-883d-b2c71cc843f2" width="48%" />
+  <img alt="preview-01" src="https://github.com/user-attachments/assets/ed6d7123-aba5-49d0-9c4a-ba857a1459ec" width="48%"/>
+  <img alt="preview-02" src="https://github.com/user-attachments/assets/a60e583d-c956-4461-883d-b2c71cc843f2" width="48%" />
 </p>
 
 ### Lockscreen & App Launcher
 <p align="center">
- <img width="2880" height="1800" alt="lockscreen" src="https://github.com/user-attachments/assets/81417a23-e2e9-410d-a626-aa74f4948118" width="48%" />
- <img width="2878" height="1800" alt="preview-02" src="https://github.com/user-attachments/assets/094f0e29-ae9c-4070-a116-569023e3aeac" width="48%" />
+ <img alt="lockscreen" src="https://github.com/user-attachments/assets/81417a23-e2e9-410d-a626-aa74f4948118" width="48%" />
+ <img alt="preview-02" src="https://github.com/user-attachments/assets/094f0e29-ae9c-4070-a116-569023e3aeac" width="48%" />
 </p>
 
 ---
@@ -122,32 +122,30 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Catppuccin-Mocha-Mauve-C
 ## 🖼️ Wallpaper Collection
 
 <p align="center">
-<img width="1920" height="797" alt="desolate-city" src="https://github.com/user-attachments/assets/2fff97be-4a7e-4fee-aaf4-d0e8eb26b0ab" width="24%" />
-<img width="4680" height="2080" alt="dark-ruins-anime-girl" src="https://github.com/user-attachments/assets/7e5e93b8-6f3f-4be4-816e-9499edffd349" width="24%" />
-<img width="6600" height="3600" alt="dark-forest-silhouette" src="https://github.com/user-attachments/assets/d464a282-3c09-4457-9ef8-24f213d682e7" width="24%" />
-<img width="1920" height="802" alt="anime-lake-cottage-sunset" src="https://github.com/user-attachments/assets/1a79f3cd-8fe9-4d17-955d-dd2496cf85a5" width="24%" />
+<img alt="desolate-city" src="https://github.com/user-attachments/assets/2fff97be-4a7e-4fee-aaf4-d0e8eb26b0ab" width="24%" />
+<img alt="dark-ruins-anime-girl" src="https://github.com/user-attachments/assets/7e5e93b8-6f3f-4be4-816e-9499edffd349" width="24%" />
+<img alt="dark-forest-silhouette" src="https://github.com/user-attachments/assets/d464a282-3c09-4457-9ef8-24f213d682e7" width="24%" />
+<img alt="anime-lake-cottage-sunset" src="https://github.com/user-attachments/assets/1a79f3cd-8fe9-4d17-955d-dd2496cf85a5" width="24%" />
 </p>
 <p align="center">
-<img width="1920" height="1080" alt="moody-lit-cabin" src="https://github.com/user-attachments/assets/c3729a67-014f-4415-a4d7-d604b2347eaf" width="24%" />
-<img width="1920" height="1080" alt="minimalist-great-wave" src="https://github.com/user-attachments/assets/c19bbfe0-c383-428d-9605-e0dbdeb88c1a" width="24%" />
-<img width="3360" height="2100" alt="geisha-skull-art" src="https://github.com/user-attachments/assets/12fb5bdb-b257-4d3b-8a7e-27524ca4e73e" width="24%" />
-<img width="1920" height="797" alt="desolate-city-2" src="https://github.com/user-attachments/assets/a004ba47-510f-4d2f-aa02-a0b74c704b97" width="24%" />
+<img alt="moody-lit-cabin" src="https://github.com/user-attachments/assets/c3729a67-014f-4415-a4d7-d604b2347eaf" width="24%" />
+<img alt="minimalist-great-wave" src="https://github.com/user-attachments/assets/c19bbfe0-c383-428d-9605-e0dbdeb88c1a" width="24%" />
+<img alt="geisha-skull-art" src="https://github.com/user-attachments/assets/12fb5bdb-b257-4d3b-8a7e-27524ca4e73e" width="24%" />
+<img alt="desolate-city-2" src="https://github.com/user-attachments/assets/a004ba47-510f-4d2f-aa02-a0b74c704b97" width="24%" />
 </p>
 <p align="center">
-  <img width="1920" height="1080" alt="starry-river-powerlines" src="https://github.com/user-attachments/assets/bebfc08b-9a66-479f-bd2d-9dca301ad6b9" width="24%" />
-<img width="1920" height="1080" alt="railroad-2" src="https://github.com/user-attachments/assets/8d7a9486-f7df-418c-b936-b8818b4d4c7e" width="24%" />
-<img width="1920" height="1080" alt="plane-purple" src="https://github.com/user-attachments/assets/be4275d0-32d0-4511-bea5-f57243adc28c" width="24%" />
-<img width="2880" height="1620" alt="pixel-reading" src="https://github.com/user-attachments/assets/c5eb8fb3-e502-489f-ad9a-6fa4bac2e0af" width="24%" />
+<img alt="starry-river-powerlines" src="https://github.com/user-attachments/assets/bebfc08b-9a66-479f-bd2d-9dca301ad6b9" width="24%" />
+<img alt="railroad-2" src="https://github.com/user-attachments/assets/8d7a9486-f7df-418c-b936-b8818b4d4c7e" width="24%" />
+<img alt="plane-purple" src="https://github.com/user-attachments/assets/be4275d0-32d0-4511-bea5-f57243adc28c" width="24%" />
+<img alt="pixel-reading" src="https://github.com/user-attachments/assets/c5eb8fb3-e502-489f-ad9a-6fa4bac2e0af" width="24%" />
 </p>
 <p align="center">
-<img width="4462" height="2508" alt="upside-down-neon-city" src="https://github.com/user-attachments/assets/3a8dd058-3f7b-4361-b238-51276691d13e" width="24%" />
-<img width="3840" height="2160" alt="twilight-anime-girl" src="https://github.com/user-attachments/assets/2ef09e5c-e14e-4cce-9dd7-e60140993c33" width="24%" />
-<img width="3840" height="2160" alt="train-sideview" src="https://github.com/user-attachments/assets/24ae6f18-cf57-478c-8d4a-eef56beeed54" width="24%"  />
-<img width="3840" height="2160" alt="stylized-cherry-blossoms" src="https://github.com/user-attachments/assets/f507914f-ede7-4e3e-a4ad-addbc64446c1" width="24%"  />
+<img alt="upside-down-neon-city" src="https://github.com/user-attachments/assets/3a8dd058-3f7b-4361-b238-51276691d13e" width="24%" />
+<img alt="twilight-anime-girl" src="https://github.com/user-attachments/assets/2ef09e5c-e14e-4cce-9dd7-e60140993c33" width="24%" />
+<img alt="train-sideview" src="https://github.com/user-attachments/assets/24ae6f18-cf57-478c-8d4a-eef56beeed54" width="24%"  />
+<img alt="stylized-cherry-blossoms" src="https://github.com/user-attachments/assets/f507914f-ede7-4e3e-a4ad-addbc64446c1" width="24%"  />
+<img alt="vibrant-gate" src="https://github.com/user-attachments/assets/fee914b1-22b1-4741-a14a-6439cebfb2c0" width="24%" />
 </p>
-<p align="center">
-</p>
-<img width="3840" height="2160" alt="vibrant-gate" src="https://github.com/user-attachments/assets/fee914b1-22b1-4741-a14a-6439cebfb2c0" width="24%" />
 
 ---
 
