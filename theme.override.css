@@ -4,19 +4,19 @@
 
 @define-color color0 #45475a;  /* Surface 1 */
 @define-color color1 #f38ba8;  /* Red/Pink (Accent) */
-@define-color color2 #a6e3a1;  /* Green */
+@define-color color2 #cba6f7;  /* Amethyst */
 @define-color color3 #f9e2af;  /* Yellow */
 @define-color color4 #89b4fa;  /* Blue */
 @define-color color5 #cba6f7;  /* Mauve */
-@define-color color6 #94e2d5;  /* Teal */
+@define-color color6 #b4befe;  /* Lavender */
 @define-color color7 #bac2de;  /* Subtext 1 */
 @define-color color8 #585b70;  /* Surface 2 */
 @define-color color9 #f38ba8;
-@define-color color10 #a6e3a1;
+@define-color color10 #cba6f7;
 @define-color color11 #f9e2af;
 @define-color color12 #89b4fa;
 @define-color color13 #cba6f7;
-@define-color color14 #94e2d5;
+@define-color color14 #b4befe;
 @define-color color15 #a6adc8; /* Subtext 0 */
 
 /* Base GTK theme variables */

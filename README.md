@@ -99,7 +99,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Catppuccin-Mocha-Mauve-C
 | Surface 1 | `#313244` | <img src="https://placehold.co/12x12/313244/313244" /> | Selection, dividers |
 | Surface 2 | `#585b70` | <img src="https://placehold.co/12x12/585b70/585b70" /> | Subtle overlays |
 | Red | `#f38ba8` | <img src="https://placehold.co/12x12/f38ba8/f38ba8" /> | Errors |
-| Green | `#a6e3a1` | <img src="https://placehold.co/12x12/a6e3a1/a6e3a1" /> | Success |
+| Amethyst | `#cba6f7` | <img src="https://placehold.co/12x12/cba6f7/cba6f7" /> | Success |
 | Yellow | `#f9e2af` | <img src="https://placehold.co/12x12/f9e2af/f9e2af" /> | Warnings |
 
 ---

@@ -23,10 +23,10 @@ foreground = "#1e1e2e"
 
 [colors.accents]
 blue = "#89b4fa"
-green = "#a6e3a1"
+green = "#cba6f7"
 magenta = "#cba6f7"
 orange = "#fab387"
 purple = "#cba6f7"
 red = "#f38ba8"
 yellow = "#f9e2af"
-cyan = "#94e2d5"
+cyan = "#b4befe"
