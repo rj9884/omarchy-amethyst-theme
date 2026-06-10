@@ -16,13 +16,13 @@
         "button.foreground": "#11111b",
         "button.hoverBackground": "#d4bff9",
 
-        "editor.background": "#1e1e2e",
+        "editor.background": "#11111b",
         "editor.foreground": "#cdd6f4",
         "editorLineNumber.foreground": "#585b70",
         "editorLineNumber.activeForeground": "#cba6f7",
         "editorCursor.foreground": "#cba6f7",
         "editor.selectionBackground": "#585b7060",
-        "editor.lineHighlightBackground": "#313244",
+        "editor.lineHighlightBackground": "#181825",
         "editorIndentGuide.background": "#45475a",
         "editorIndentGuide.activeBackground": "#cba6f7",
 
@@ -39,9 +39,9 @@
         "sideBarSectionHeader.foreground": "#cdd6f4",
 
         "editorGroupHeader.tabsBackground": "#11111b",
-        "tab.activeBackground": "#1e1e2e",
+        "tab.activeBackground": "#11111b",
         "tab.activeForeground": "#cba6f7",
-        "tab.inactiveBackground": "#11111b",
+        "tab.inactiveBackground": "#181825",
         "tab.inactiveForeground": "#585b70",
         "tab.activeBorder": "#cba6f7",
 
@@ -50,7 +50,7 @@
         "statusBarItem.remoteBackground": "#cba6f7",
         "statusBarItem.remoteForeground": "#11111b",
 
-        "terminal.background": "#1e1e2e",
+        "terminal.background": "#11111b",
         "terminal.ansiBlack": "#45475a",
         "terminal.ansiRed": "#f38ba8",
         "terminal.ansiGreen": "#cba6f7",
