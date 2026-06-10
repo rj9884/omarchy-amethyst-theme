@@ -88,6 +88,108 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Catppuccin-Mocha-Mauve-C
 
 ---
 
+## 💻 VS Code & Antigravity IDE
+
+### Installing the Amethyst Theme
+
+The repository includes a complete standalone **Omarchy Amethyst** VS Code color theme with comprehensive UI colors and syntax highlighting.
+
+#### Option 1: Manual Installation (Recommended)
+
+1. **Copy the theme file** to your VS Code extensions directory:
+
+   ```bash
+   # For VS Code
+   mkdir -p ~/.vscode/extensions/omarchy-amethyst-theme-1.0.0/themes
+   cp vscode_colors.json ~/.vscode/extensions/omarchy-amethyst-theme-1.0.0/themes/
+   
+   # For Antigravity IDE
+   mkdir -p ~/.config/Antigravity\ IDE/extensions/omarchy-amethyst-theme-1.0.0/themes
+   cp vscode_colors.json ~/.config/Antigravity\ IDE/extensions/omarchy-amethyst-theme-1.0.0/themes/
+   ```
+
+2. **Create package metadata**:
+
+   ```bash
+   # For VS Code
+   cat > ~/.vscode/extensions/omarchy-amethyst-theme-1.0.0/package.json << 'EOF'
+   {
+     "name": "omarchy-amethyst-theme",
+     "displayName": "Omarchy Amethyst",
+     "description": "Amethyst-tinted VS Code theme from Omarchy",
+     "version": "1.0.0",
+     "publisher": "omarchy",
+     "contributes": {
+       "themes": [
+         {
+           "label": "Omarchy Amethyst",
+           "uiTheme": "vs-dark",
+           "path": "./themes/vscode_colors.json"
+         }
+       ]
+     }
+   }
+   EOF
+   
+   # For Antigravity IDE (same structure)
+   cat > ~/.config/Antigravity\ IDE/extensions/omarchy-amethyst-theme-1.0.0/package.json << 'EOF'
+   {
+     "name": "omarchy-amethyst-theme",
+     "displayName": "Omarchy Amethyst",
+     "description": "Amethyst-tinted theme from Omarchy",
+     "version": "1.0.0",
+     "publisher": "omarchy",
+     "contributes": {
+       "themes": [
+         {
+           "label": "Omarchy Amethyst",
+           "uiTheme": "vs-dark",
+           "path": "./themes/vscode_colors.json"
+         }
+       ]
+     }
+   }
+   EOF
+   ```
+
+3. **Activate the theme**:
+   - Open VS Code/Antigravity IDE
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS)
+   - Type `Preferences: Color Theme`
+   - Select **Omarchy Amethyst**
+
+#### Option 2: Symlink (For Development)
+
+If you're actively working on the theme, create a symlink instead:
+
+```bash
+# For VS Code
+mkdir -p ~/.vscode/extensions/omarchy-amethyst-theme-1.0.0/themes
+ln -sf /path/to/repo/vscode_colors.json ~/.vscode/extensions/omarchy-amethyst-theme-1.0.0/themes/vscode_colors.json
+
+# For Antigravity IDE
+mkdir -p ~/.config/Antigravity\ IDE/extensions/omarchy-amethyst-theme-1.0.0/themes
+ln -sf /path/to/repo/vscode_colors.json ~/.config/Antigravity\ IDE/extensions/omarchy-amethyst-theme-1.0.0/themes/vscode_colors.json
+```
+
+### Theme Features
+
+✨ **Complete Coverage**
+- 80+ workbench colors (buttons, inputs, dropdowns, editor, statusbar, terminal, notifications)
+- 27 syntax highlighting scopes (comments, strings, keywords, functions, classes, operators, markup)
+- Terminal ANSI color mapping (8 standard + 8 bright colors)
+- Selection, cursor, and line highlighting
+- Diff colors, merge conflicts, and error/warning decorations
+
+🎨 **Amethyst Palette**
+- Accent: `#cba6f7` (primary interactive elements)
+- Foreground: `#cdd6f4` (text and UI labels)
+- Background: `#11111b` (editor and panels)
+- Subtle: `#585b70` (disabled states, secondary text)
+- Surface: `#313244` (inputs, dropdowns, selections)
+
+---
+
 ## 🎨 Color Palette
 
 | Color | Hex | Preview | Usage |
