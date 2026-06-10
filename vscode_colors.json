@@ -367,5 +367,23 @@
                 "foreground": "#89b4fa"
             }
         }
-    ]
+    ],
+    "terminalColors": {
+        "terminal.ansiBlack": "#45475a",
+        "terminal.ansiRed": "#f38ba8",
+        "terminal.ansiGreen": "#a6e3a1",
+        "terminal.ansiYellow": "#f9e2af",
+        "terminal.ansiBlue": "#89b4fa",
+        "terminal.ansiMagenta": "#cba6f7",
+        "terminal.ansiCyan": "#94e2d5",
+        "terminal.ansiWhite": "#bac2de",
+        "terminal.ansiBrightBlack": "#585b70",
+        "terminal.ansiBrightRed": "#f38ba8",
+        "terminal.ansiBrightGreen": "#a6e3a1",
+        "terminal.ansiBrightYellow": "#f9e2af",
+        "terminal.ansiBrightBlue": "#89b4fa",
+        "terminal.ansiBrightMagenta": "#cba6f7",
+        "terminal.ansiBrightCyan": "#94e2d5",
+        "terminal.ansiBrightWhite": "#cdd6f4"
+    }
 }
