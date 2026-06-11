@@ -175,7 +175,7 @@ ln -sf /path/to/repo/vscode_colors.json ~/.config/Antigravity\ IDE/extensions/om
 ### Theme Features
 
 ✨ **Complete Coverage**
-- 80+ workbench colors (buttons, inputs, dropdowns, editor, statusbar, terminal, notifications)
+- 174 workbench colors (buttons, inputs, dropdowns, editor, statusbar, terminal, notifications)
 - 27 syntax highlighting scopes (comments, strings, keywords, functions, classes, operators, markup)
 - Terminal ANSI color mapping (8 standard + 8 bright colors)
 - Selection, cursor, and line highlighting
@@ -187,6 +187,16 @@ ln -sf /path/to/repo/vscode_colors.json ~/.config/Antigravity\ IDE/extensions/om
 - Background: `#11111b` (editor and panels)
 - Subtle: `#585b70` (disabled states, secondary text)
 - Surface: `#313244` (inputs, dropdowns, selections)
+
+### Testing Checklist
+
+Once installed, verify the theme works correctly:
+
+1. **UI Elements**: Check that buttons, inputs, dropdowns, and status bar use amethyst accent (`#cba6f7`)
+2. **Syntax Highlighting**: Open a TypeScript/JavaScript file and verify comments, strings, keywords, and functions are properly colored
+3. **Terminal Colors**: Open the terminal and verify ANSI colors render correctly (try `echo -e "\e[31mRed\e[0m \e[32mGreen\e[0m \e[33mYellow\e[0m \e[34mBlue\e[0m"`)
+4. **Editor Colors**: Verify line numbers, current line highlight, and selection use the amethyst palette
+5. **Activity Bar**: Check that active/inactive icons use proper contrast
 
 ---
 
