@@ -1,5 +1,5 @@
 /* =============================================================================
-   OMARCHY AMETHYST THEME - GTK3
+   OMARCHY AMETHYST THEME - GTK3 & GNOME SUSHI
    ============================================================================= */
 
 @define-color background     #11111b;
@@ -49,7 +49,6 @@
 @define-color theme_selected_bg_color @magenta;
 @define-color theme_selected_fg_color @background;
 
-/* Popover & Dialog color overrides for GTK3 */
 @define-color popover_bg_color #181825;
 @define-color popover_fg_color #cdd6f4;
 @define-color popover_border_color #313244;
@@ -57,11 +56,14 @@
 @define-color dialog_bg_color #181825;
 @define-color dialog_fg_color #cdd6f4;
 
-/* GTK3 HeaderBar & TitleBar Background Overrides */
+/* GTK HeaderBar, TitleBar & OSD Toolbar Universal Overrides */
 headerbar,
-.headerbar,
 headerbar.titlebar,
 .titlebar,
+headerbar:backdrop,
+.titlebar:backdrop,
+window headerbar,
+window .titlebar,
 window.csd headerbar,
 window.csd .titlebar,
 window.csd headerbar.titlebar,
@@ -70,7 +72,22 @@ window.csd > .titlebar,
 window.csd headerbar:backdrop,
 window.csd .titlebar:backdrop,
 .header-bar,
-headerbar box {
+headerbar box,
+toolbar.osd,
+.osd,
+.osd toolbar,
+.osd headerbar,
+.osd .toolbar,
+window.sushi-font-widget headerbar,
+window.sushi-text-widget headerbar,
+window.sushi-viewport headerbar,
+window.sushi-media-widget headerbar,
+window.sushi-pdf-widget headerbar,
+.sushi-font-widget headerbar,
+.sushi-text-widget headerbar,
+.sushi-viewport headerbar,
+.sushi-media-widget headerbar,
+.sushi-pdf-widget headerbar {
   background-color: #11111b;
   background-image: none;
   color: #cdd6f4;
@@ -81,30 +98,50 @@ headerbar box {
 headerbar button,
 .titlebar button,
 window.csd headerbar button,
-window.csd .titlebar button {
-  background-color: #181825;
+window.csd .titlebar button,
+toolbar.osd button,
+.osd button {
+  background-color: transparent;
   background-image: none;
   color: #cdd6f4;
-  border: 1px solid #313244;
+  border: none;
+  box-shadow: none;
+  padding: 6px 12px;
   border-radius: 8px;
 }
 
 headerbar button:hover,
 .titlebar button:hover,
 window.csd headerbar button:hover,
-window.csd .titlebar button:hover {
-  background-color: #cba6f7;
-  background-image: none;
+window.csd .titlebar button:hover,
+toolbar.osd button:hover,
+.osd button:hover {
+  background-color: rgba(203, 166, 247, 0.18);
+  color: #cba6f7;
+}
+
+headerbar button.close,
+.titlebar button.close,
+windowcontrols button.close {
+  padding: 6px;
+  border-radius: 50%;
+}
+
+headerbar button.close:hover,
+.titlebar button.close:hover {
+  background-color: #f38ba8;
   color: #11111b;
 }
 
-/* GTK3 Popover, Context Menu & Quick Overview / Preview Styling */
+/* GTK & Libadwaita Popover, Context Menu & Quick Overview / Preview Styling */
 popover,
 popover > contents,
 popover.menu,
 popover.menu > contents,
 popover .background,
 popover.background,
+headerbar popover,
+.titlebar popover,
 .menu,
 menu,
 .context-menu,
@@ -119,16 +156,25 @@ window.quick-preview,
 }
 
 /* GTKSourceView / TextView / Sushi Quick Preview / GNOME Text Editor */
+window.sushi-font-widget,
+window.sushi-text-widget,
+window.sushi-viewport,
+window.sushi-media-widget,
+window.sushi-pdf-widget,
+.sushi-font-widget,
+.sushi-text-widget,
+.sushi-viewport,
+.sushi-media-widget,
+.sushi-pdf-widget,
+window.sushi-font-widget headerbar,
+window.sushi-text-widget headerbar,
+window.sushi-viewport headerbar,
+window.sushi-media-widget headerbar,
+window.sushi-pdf-widget headerbar,
 textview,
 textview text,
 sourceview,
 sourceview text,
-.sushi-font-widget,
-.sushi-text-widget,
-.sushi-viewport,
-window.sushi-font-widget,
-window.sushi-text-widget,
-window.sushi-viewport,
 .view,
 view,
 editor,

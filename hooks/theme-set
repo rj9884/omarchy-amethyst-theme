@@ -1,0 +1,8 @@
+#!/bin/bash
+# Omarchy Hook: Runs after omarchy theme set
+THEME_NAME=$1
+
+if [ -d "$HOME/.themes/$THEME_NAME" ]; then
+  gsettings set org.gnome.desktop.interface gtk-theme "$THEME_NAME" 2>/dev/null || true
+  sed -i "s/gtk-theme-name = .*/gtk-theme-name = $THEME_NAME/g" "$HOME/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini" 2>/dev/null || true
+fi

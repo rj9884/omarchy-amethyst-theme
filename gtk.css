@@ -1,5 +1,5 @@
 /* =============================================================================
-   OMARCHY THEME - GTK Catppuccin Mocha / Amethyst (matched to Waybar)
+   OMARCHY AMETHYST THEME - GTK3 & GNOME SUSHI
    ============================================================================= */
 
 @define-color background     #11111b;
@@ -49,7 +49,6 @@
 @define-color theme_selected_bg_color @magenta;
 @define-color theme_selected_fg_color @background;
 
-/* Popover & Dialog color overrides for GTK3 / GTK4 / Libadwaita */
 @define-color popover_bg_color #181825;
 @define-color popover_fg_color #cdd6f4;
 @define-color popover_border_color #313244;
@@ -57,7 +56,7 @@
 @define-color dialog_bg_color #181825;
 @define-color dialog_fg_color #cdd6f4;
 
-/* GTK HeaderBar & TitleBar Universal Background Overrides */
+/* GTK HeaderBar, TitleBar & OSD Toolbar Universal Overrides */
 headerbar,
 headerbar.titlebar,
 .titlebar,
@@ -73,44 +72,76 @@ window.csd > .titlebar,
 window.csd headerbar:backdrop,
 window.csd .titlebar:backdrop,
 .header-bar,
-headerbar box {
-  background: #11111b !important;
-  background-color: #11111b !important;
-  background-image: none !important;
-  color: #cdd6f4 !important;
-  border-bottom: 1px solid #313244 !important;
-  box-shadow: none !important;
+headerbar box,
+toolbar.osd,
+.osd,
+.osd toolbar,
+.osd headerbar,
+.osd .toolbar,
+window.sushi-font-widget headerbar,
+window.sushi-text-widget headerbar,
+window.sushi-viewport headerbar,
+window.sushi-media-widget headerbar,
+window.sushi-pdf-widget headerbar,
+.sushi-font-widget headerbar,
+.sushi-text-widget headerbar,
+.sushi-viewport headerbar,
+.sushi-media-widget headerbar,
+.sushi-pdf-widget headerbar {
+  background-color: #11111b;
+  background-image: none;
+  color: #cdd6f4;
+  border-bottom: 1px solid #313244;
+  box-shadow: none;
 }
 
 headerbar button,
 .titlebar button,
 window.csd headerbar button,
-window.csd .titlebar button {
-  background: #181825 !important;
-  background-color: #181825 !important;
-  background-image: none !important;
-  color: #cdd6f4 !important;
-  border: 1px solid #313244 !important;
-  border-radius: 8px !important;
+window.csd .titlebar button,
+toolbar.osd button,
+.osd button {
+  background-color: transparent;
+  background-image: none;
+  color: #cdd6f4;
+  border: none;
+  box-shadow: none;
+  padding: 6px 12px;
+  border-radius: 8px;
 }
 
 headerbar button:hover,
 .titlebar button:hover,
 window.csd headerbar button:hover,
-window.csd .titlebar button:hover {
-  background: #cba6f7 !important;
-  background-color: #cba6f7 !important;
-  background-image: none !important;
-  color: #11111b !important;
+window.csd .titlebar button:hover,
+toolbar.osd button:hover,
+.osd button:hover {
+  background-color: rgba(203, 166, 247, 0.18);
+  color: #cba6f7;
 }
 
-/* GTK4 & Libadwaita Popover, Context Menu & Quick Overview / Preview Styling */
+headerbar button.close,
+.titlebar button.close,
+windowcontrols button.close {
+  padding: 6px;
+  border-radius: 50%;
+}
+
+headerbar button.close:hover,
+.titlebar button.close:hover {
+  background-color: #f38ba8;
+  color: #11111b;
+}
+
+/* GTK & Libadwaita Popover, Context Menu & Quick Overview / Preview Styling */
 popover,
 popover > contents,
 popover.menu,
 popover.menu > contents,
 popover .background,
 popover.background,
+headerbar popover,
+.titlebar popover,
 .menu,
 menu,
 .context-menu,
@@ -118,44 +149,53 @@ menu,
 window.quick-preview,
 .sushi-viewport,
 .file-properties {
-  background-color: #181825 !important;
-  color: #cdd6f4 !important;
-  border: 1px solid #313244 !important;
-  border-radius: 12px !important;
+  background-color: #181825;
+  color: #cdd6f4;
+  border: 1px solid #313244;
+  border-radius: 12px;
 }
 
 /* GTKSourceView / TextView / Sushi Quick Preview / GNOME Text Editor */
+window.sushi-font-widget,
+window.sushi-text-widget,
+window.sushi-viewport,
+window.sushi-media-widget,
+window.sushi-pdf-widget,
+.sushi-font-widget,
+.sushi-text-widget,
+.sushi-viewport,
+.sushi-media-widget,
+.sushi-pdf-widget,
+window.sushi-font-widget headerbar,
+window.sushi-text-widget headerbar,
+window.sushi-viewport headerbar,
+window.sushi-media-widget headerbar,
+window.sushi-pdf-widget headerbar,
 textview,
 textview text,
 sourceview,
 sourceview text,
-.sushi-font-widget,
-.sushi-text-widget,
-.sushi-viewport,
-window.sushi-font-widget,
-window.sushi-text-widget,
-window.sushi-viewport,
 .view,
 view,
 editor,
 .editor {
-  background-color: #11111b !important;
-  color: #cdd6f4 !important;
+  background-color: #11111b;
+  color: #cdd6f4;
 }
 
 gutter,
 gutter text,
 line-numbers {
-  background-color: #11111b !important;
-  color: #585b70 !important;
+  background-color: #11111b;
+  color: #585b70;
 }
 
 popover list,
 popover.menu modelbutton,
 popover modelbutton,
 menuitem {
-  border-radius: 8px !important;
-  color: #cdd6f4 !important;
+  border-radius: 8px;
+  color: #cdd6f4;
 }
 
 popover modelbutton:hover,
@@ -164,41 +204,37 @@ popover.menu modelbutton:hover,
 popover.menu modelbutton:selected,
 menuitem:hover,
 .menuitem:hover {
-  background-color: #cba6f7 !important;
-  color: #11111b !important;
+  background-color: #cba6f7;
+  color: #11111b;
 }
 
 messagedialog {
-  background-color: @background !important;
-  border: 1px solid @bright_black !important;
+  background-color: @background;
+  border: 1px solid @bright_black;
 }
 
 messagedialog label {
-  color: @foreground !important;
+  color: @foreground;
   font-size: 14pt;
   font-weight: bold;
 }
 
 messagedialog button {
-  background-color: @black !important;
-  color: @foreground !important;
-  border: 1px solid @bright_black !important;
+  background-color: @black;
+  color: @foreground;
+  border: 1px solid @bright_black;
   padding: 8px;
   border-radius: 8px;
 }
 
 messagedialog button:hover {
-  background-color: @magenta !important;
-  color: @background !important;
+  background-color: @magenta;
+  color: @background;
 }
 
 toast {
-  background-color: @black !important;
-  color: @foreground !important;
-  border: 1px solid @bright_black !important;
+  background-color: @black;
+  color: @foreground;
+  border: 1px solid @bright_black;
   border-radius: 12px;
-}
-
-.svg-icon {
-  filter: sepia(100%) saturate(300%) hue-rotate(240deg) brightness(80%) contrast(100%);
 }
