@@ -138,6 +138,12 @@ EOF
 fi
 
 # 6. Apply via Omarchy CLI if present
+if [ -f "$THEME_DIR/hooks/theme-set" ]; then
+  mkdir -p "$HOME/.config/omarchy/hooks"
+  cp -f "$THEME_DIR/hooks/theme-set" "$HOME/.config/omarchy/hooks/theme-set"
+  chmod +x "$HOME/.config/omarchy/hooks/theme-set"
+fi
+
 if command -v omarchy &>/dev/null; then
   omarchy theme set "$THEME_NAME"
 fi
