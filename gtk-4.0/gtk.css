@@ -1,5 +1,5 @@
 /* =============================================================================
-   OMARCHY THEME - GTK Catppuccin Mocha / Amethyst (matched to Waybar)
+   OMARCHY AMETHYST THEME - GTK4 / Libadwaita
    ============================================================================= */
 
 @define-color background     #11111b;
@@ -49,7 +49,7 @@
 @define-color theme_selected_bg_color @magenta;
 @define-color theme_selected_fg_color @background;
 
-/* Popover & Dialog color overrides for GTK3 / GTK4 / Libadwaita */
+/* Popover & Dialog color overrides for GTK4 / Libadwaita */
 @define-color popover_bg_color #181825;
 @define-color popover_fg_color #cdd6f4;
 @define-color popover_border_color #313244;
@@ -57,7 +57,7 @@
 @define-color dialog_bg_color #181825;
 @define-color dialog_fg_color #cdd6f4;
 
-/* GTK HeaderBar & TitleBar Universal Background Overrides */
+/* GTK4 HeaderBar & TitleBar Background Overrides */
 headerbar,
 headerbar.titlebar,
 .titlebar,

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="amethyst" _name="Amethyst" version="1.0">
+  <author>Omarchy</author>
+  <_description>Omarchy Amethyst dark color scheme</_description>
+
+  <color name="bg" value="#11111b"/>
+  <color name="fg" value="#cdd6f4"/>
+  <color name="alt_bg" value="#181825"/>
+  <color name="accent" value="#cba6f7"/>
+  <color name="muted" value="#585b70"/>
+  <color name="red" value="#f38ba8"/>
+  <color name="yellow" value="#f9e2af"/>
+  <color name="green" value="#cba6f7"/>
+  <color name="blue" value="#89b4fa"/>
+  <color name="cyan" value="#b4befe"/>
+
+  <style name="text" foreground="fg" background="bg"/>
+  <style name="selection" foreground="bg" background="accent"/>
+  <style name="cursor" foreground="accent"/>
+  <style name="current-line" background="alt_bg"/>
+  <style name="line-numbers" foreground="muted" background="bg"/>
+  <style name="right-margin" foreground="muted" background="alt_bg"/>
+
+  <style name="def:comment" foreground="muted" italic="true"/>
+  <style name="def:constant" foreground="yellow"/>
+  <style name="def:string" foreground="green"/>
+  <style name="def:identifier" foreground="blue"/>
+  <style name="def:statement" foreground="accent" bold="true"/>
+  <style name="def:type" foreground="cyan"/>
+</style-scheme>
