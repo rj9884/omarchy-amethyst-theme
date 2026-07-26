@@ -1,5 +1,5 @@
 /* =============================================================================
-   OMARCHY AMETHYST THEME - GTK3 & GNOME SUSHI
+   OMARCHY AMETHYST THEME - GTK3, GTK4 & LIBADWAITA STYLESHEET
    ============================================================================= */
 
 @define-color background     #11111b;
@@ -56,42 +56,31 @@
 @define-color dialog_bg_color #181825;
 @define-color dialog_fg_color #cdd6f4;
 
-/* GTK HeaderBar, TitleBar & OSD Toolbar Universal Overrides */
+/* GTK HeaderBar & TitleBar Clean Single Border */
 headerbar,
 headerbar.titlebar,
 .titlebar,
-headerbar:backdrop,
-.titlebar:backdrop,
-window headerbar,
-window .titlebar,
-window.csd headerbar,
-window.csd .titlebar,
-window.csd headerbar.titlebar,
-window.csd > headerbar,
-window.csd > .titlebar,
-window.csd headerbar:backdrop,
-window.csd .titlebar:backdrop,
-.header-bar,
-headerbar box,
 toolbar.osd,
 .osd,
 .osd toolbar,
-.osd headerbar,
-.osd .toolbar,
-window.sushi-font-widget headerbar,
-window.sushi-text-widget headerbar,
-window.sushi-viewport headerbar,
-window.sushi-media-widget headerbar,
-window.sushi-pdf-widget headerbar,
-.sushi-font-widget headerbar,
-.sushi-text-widget headerbar,
-.sushi-viewport headerbar,
-.sushi-media-widget headerbar,
-.sushi-pdf-widget headerbar {
+.osd headerbar {
   background-color: #11111b;
   background-image: none;
   color: #cdd6f4;
+  border: none;
   border-bottom: 1px solid #313244;
+  box-shadow: none;
+}
+
+headerbar box,
+headerbar.titlebar box,
+.titlebar box,
+headerbar:backdrop,
+.titlebar:backdrop,
+headerbar > box,
+.titlebar > box {
+  border: none;
+  border-bottom: none;
   box-shadow: none;
 }
 
@@ -133,7 +122,7 @@ headerbar button.close:hover,
   color: #11111b;
 }
 
-/* GTK & Libadwaita Popover, Context Menu & Quick Overview / Preview Styling */
+/* Popover, Context Menu & Dropdown Styling */
 popover,
 popover > contents,
 popover.menu,
@@ -153,6 +142,42 @@ window.quick-preview,
   color: #cdd6f4;
   border: 1px solid #313244;
   border-radius: 12px;
+}
+
+/* Soft, Translucent Hover Effects for Menus, Popovers, & Lists */
+popover list,
+popover.menu modelbutton,
+popover modelbutton,
+menuitem,
+.sidebar-row,
+row {
+  border-radius: 8px;
+  color: #cdd6f4;
+}
+
+popover modelbutton:hover,
+popover modelbutton:selected,
+popover.menu modelbutton:hover,
+popover.menu modelbutton:selected,
+menuitem:hover,
+.menuitem:hover,
+.sidebar-row:hover,
+row:hover,
+row:selected {
+  background-color: rgba(203, 166, 247, 0.18);
+  color: #cba6f7;
+}
+
+/* Tooltips */
+tooltip,
+tooltip *,
+tooltip.background {
+  background-color: #181825;
+  color: #cdd6f4;
+  border: 1px solid #313244;
+  border-radius: 8px;
+  padding: 4px 8px;
+  box-shadow: none;
 }
 
 /* GTKSourceView / TextView / Sushi Quick Preview / GNOME Text Editor */
@@ -188,24 +213,6 @@ gutter text,
 line-numbers {
   background-color: #11111b;
   color: #585b70;
-}
-
-popover list,
-popover.menu modelbutton,
-popover modelbutton,
-menuitem {
-  border-radius: 8px;
-  color: #cdd6f4;
-}
-
-popover modelbutton:hover,
-popover modelbutton:selected,
-popover.menu modelbutton:hover,
-popover.menu modelbutton:selected,
-menuitem:hover,
-.menuitem:hover {
-  background-color: #cba6f7;
-  color: #11111b;
 }
 
 messagedialog {
