@@ -49,6 +49,15 @@
 @define-color theme_selected_bg_color @magenta;
 @define-color theme_selected_fg_color @background;
 
+/* Chromium / Brave GTK Theme Color Definitions */
+@define-color frame_color #11111b;
+@define-color frame_color_inactive #11111b;
+@define-color toolbar_bg_color #181825;
+@define-color tab_bg_color #11111b;
+@define-color tab_title_color #cdd6f4;
+@define-color ntp_bg #11111b;
+@define-color ntp_text #cdd6f4;
+
 /* Popover & Dialog color overrides for GTK3 */
 @define-color popover_bg_color #181825;
 @define-color popover_fg_color #cdd6f4;
@@ -70,7 +79,13 @@ window.csd > .titlebar,
 window.csd headerbar:backdrop,
 window.csd .titlebar:backdrop,
 .header-bar,
-headerbar box {
+headerbar box,
+window.background.chromium,
+window.background.chrome,
+.chromium,
+.chrome-top-container,
+#chrome-top-container,
+headerbar.titlebar.chrome {
   background-color: #11111b;
   background-image: none;
   color: #cdd6f4;
@@ -81,7 +96,8 @@ headerbar box {
 headerbar button,
 .titlebar button,
 window.csd headerbar button,
-window.csd .titlebar button {
+window.csd .titlebar button,
+.chrome-top-container button {
   background-color: #181825;
   background-image: none;
   color: #cdd6f4;
