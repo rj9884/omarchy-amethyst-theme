@@ -137,6 +137,21 @@ EOF
   cp -f "$THEME_DIR/vscode_colors.json" "$HOME/.vscode/extensions/omarchy.amethyst-theme-1.0.0/vscode_colors.json"
 fi
 
+if [ -f "$THEME_DIR/bin/power-profile-switch" ]; then
+  mkdir -p "$HOME/.config/omarchy/bin"
+  cp -f "$THEME_DIR/bin/power-profile-switch" "$HOME/.config/omarchy/bin/power-profile-switch"
+  chmod +x "$HOME/.config/omarchy/bin/power-profile-switch"
+  if command -v sudo &>/dev/null; then
+    sudo -n cp -f "$THEME_DIR/bin/power-profile-switch" /usr/local/bin/power-profile-switch 2>/dev/null || true
+    sudo -n chmod +x /usr/local/bin/power-profile-switch 2>/dev/null || true
+  fi
+fi
+
+if [ -f "$THEME_DIR/99-power-profile.rules" ] && command -v sudo &>/dev/null; then
+  sudo -n cp -f "$THEME_DIR/99-power-profile.rules" /etc/udev/rules.d/99-power-profile.rules 2>/dev/null || true
+  sudo -n udevadm control --reload-rules 2>/dev/null || true
+fi
+
 # 6. Apply via Omarchy CLI if present
 if [ -f "$THEME_DIR/hooks/theme-set" ]; then
   mkdir -p "$HOME/.config/omarchy/hooks"
