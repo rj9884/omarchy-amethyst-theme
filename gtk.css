@@ -122,15 +122,9 @@ headerbar button.close:hover,
   color: #11111b;
 }
 
-/* Popover, Context Menu & Dropdown Styling */
+/* Popover, Context Menu & Dropdown Single Outer Border (No Inner Stacking) */
 popover,
-popover > contents,
 popover.menu,
-popover.menu > contents,
-popover .background,
-popover.background,
-headerbar popover,
-.titlebar popover,
 .menu,
 menu,
 .context-menu,
@@ -142,6 +136,20 @@ window.quick-preview,
   color: #cdd6f4;
   border: 1px solid #313244;
   border-radius: 12px;
+  padding: 4px;
+}
+
+popover > contents,
+popover.menu > contents,
+popover .background,
+popover list,
+popover.menu list,
+popover box {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Soft, Translucent Hover Effects for Menus, Popovers, & Lists */
@@ -168,9 +176,8 @@ row:selected {
   color: #cba6f7;
 }
 
-/* Tooltips */
+/* Tooltips (Single Outer Border & Clean Padding) */
 tooltip,
-tooltip *,
 tooltip.background {
   background-color: #181825;
   color: #cdd6f4;
@@ -178,6 +185,16 @@ tooltip.background {
   border-radius: 8px;
   padding: 4px 8px;
   box-shadow: none;
+}
+
+tooltip box,
+tooltip label,
+tooltip > * {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* GTKSourceView / TextView / Sushi Quick Preview / GNOME Text Editor */
