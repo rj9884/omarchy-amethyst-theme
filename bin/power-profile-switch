@@ -8,8 +8,12 @@ if [[ -z $action || $action == "autodetect" ]]; then
   action=battery
   for ps in /sys/class/power_supply/*; do
     [[ -r $ps/online && -r $ps/type ]] || continue
+    if [[ -r $ps/scope ]]; then
+      scope=$(cat "$ps/scope" 2>/dev/null)
+      [[ $scope == "Device" ]] && continue
+    fi
     type=$(cat "$ps/type")
-    [[ $type == "Mains" || $type == "USB" ]] || continue
+    [[ $type == "Mains" || $type == "AC" ]] || continue
     if [[ $(cat "$ps/online") == "1" ]]; then
       action=ac
       break
