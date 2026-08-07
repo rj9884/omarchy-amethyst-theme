@@ -56,23 +56,24 @@
 @define-color dialog_bg_color #181825;
 @define-color dialog_fg_color #cdd6f4;
 
-/* GTK HeaderBar & TitleBar Clean Base Styling */
+/* GTK HeaderBar & TitleBar Base Styling */
 headerbar,
 headerbar.titlebar,
 .titlebar,
 toolbar.osd,
 .osd,
 .osd toolbar,
-.osd headerbar {
+.osd headerbar,
+windowtitle,
+windowheader {
   background-color: #11111b;
   background-image: none;
   color: #cdd6f4;
   border: none;
   border-bottom: 1px solid #313244;
   box-shadow: none;
-  min-height: 46px;
-  padding-top: 0;
-  padding-bottom: 0;
+  min-height: 38px;
+  padding: 2px 6px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -91,6 +92,27 @@ headerbar > box,
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+/* GNOME Text Editor & Libadwaita Tab Bar & Tab Height */
+tabbar,
+tabbar tab,
+tabbox,
+tabbox tab,
+tab {
+  min-height: 28px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+tabbar tab button,
+tabbox tab button,
+tab button {
+  min-height: 22px;
+  padding: 2px 5px;
+  margin: 0;
 }
 
 /* =============================================================================
@@ -112,10 +134,12 @@ button.text-button {
   border: none;
   outline: none;
   box-shadow: none;
-  padding: 6px 12px;
-  min-height: 30px;
-  border-radius: 8px;
+  padding: 4px 12px;
+  min-height: 28px;
+  border-radius: 6px;
   font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* HOVER = LIGHTER TRANSLUCENT PURPLE (rgba(203, 166, 247, 0.18)) */
@@ -147,8 +171,9 @@ button:active {
   outline: none;
   box-shadow: none;
   font-weight: bold;
-  padding: 6px 14px;
-  border-radius: 8px;
+  padding: 4px 14px;
+  min-height: 28px;
+  border-radius: 6px;
 }
 
 button.suggested-action:hover,
@@ -183,7 +208,7 @@ headerbar pathbar button {
   box-shadow: none;
   padding: 3px 6px;
   margin: 0 1px;
-  min-height: 28px;
+  min-height: 26px;
   border-radius: 6px;
 }
 
@@ -233,7 +258,7 @@ pathbar button label {
 headerbar button.close,
 .titlebar button.close,
 windowcontrols button.close {
-  padding: 6px;
+  padding: 5px;
   border-radius: 50%;
 }
 
@@ -399,9 +424,9 @@ filechooser .sidebar .sidebar-row,
   border: none;
   outline: none;
   box-shadow: none;
-  padding: 6px 10px;
+  padding: 5px 8px;
   margin: 1px 0;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #cdd6f4;
 }
 
