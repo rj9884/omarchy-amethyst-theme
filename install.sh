@@ -37,7 +37,7 @@ fi
 # GTK3 dark settings
 cat > "$HOME/.config/gtk-3.0/settings.ini" << 'EOF'
 [Settings]
-gtk-theme-name = Adwaita-dark
+gtk-theme-name = omarchy-amethyst-theme
 gtk-icon-theme-name = Yaru-blue
 gtk-font-name = FiraCode Nerd Font 10
 gtk-application-prefer-dark-theme = 1
@@ -70,7 +70,7 @@ fi
 # GNOME settings if gsettings available
 if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" 2>/dev/null || true
-  gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark" 2>/dev/null || true
+  gsettings set org.gnome.desktop.interface gtk-theme "omarchy-amethyst-theme" 2>/dev/null || true
   gsettings set org.gnome.TextEditor style-scheme "amethyst" 2>/dev/null || true
 fi
 
@@ -86,3 +86,8 @@ if command -v omarchy &>/dev/null; then
 fi
 
 echo "✓ Omarchy Amethyst Theme successfully installed and configured!"
+
+
+# Restart desktop portal daemon to apply new GTK CSS immediately
+pkill -f xdg-desktop-portal-gtk 2>/dev/null || true
+pkill -f xdg-desktop-portal 2>/dev/null || true

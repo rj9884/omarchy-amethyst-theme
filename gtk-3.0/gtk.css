@@ -21,33 +21,33 @@
 @define-color bright_cyan    #b4befe;
 @define-color bright_white   #a6adc8;
 
-@define-color accent_bg_color @magenta;
-@define-color accent_fg_color @background;
-@define-color accent_color @magenta;
+@define-color accent_bg_color #cba6f7;
+@define-color accent_fg_color #11111b;
+@define-color accent_color #cba6f7;
 
-@define-color window_bg_color @background;
-@define-color window_fg_color @foreground;
+@define-color window_bg_color #11111b;
+@define-color window_fg_color #cdd6f4;
 
-@define-color view_bg_color @background;
-@define-color view_fg_color @foreground;
-@define-color sidebar_bg_color @background;
-@define-color sidebar_fg_color @foreground;
+@define-color view_bg_color #11111b;
+@define-color view_fg_color #cdd6f4;
+@define-color sidebar_bg_color #11111b;
+@define-color sidebar_fg_color #cdd6f4;
 
 @define-color headerbar_bg_color #11111b;
 @define-color headerbar_fg_color #cdd6f4;
 @define-color headerbar_backdrop_color #11111b;
 @define-color headerbar_shade_color #11111b;
 @define-color card_bg_color #181825;
-@define-color card_fg_color @foreground;
+@define-color card_fg_color #cdd6f4;
 
-@define-color borders @bright_black;
+@define-color borders #313244;
 
-@define-color theme_fg_color @foreground;
-@define-color theme_text_color @foreground;
-@define-color theme_bg_color @background;
-@define-color theme_base_color @black;
-@define-color theme_selected_bg_color @magenta;
-@define-color theme_selected_fg_color @background;
+@define-color theme_fg_color #cdd6f4;
+@define-color theme_text_color #cdd6f4;
+@define-color theme_bg_color #11111b;
+@define-color theme_base_color #11111b;
+@define-color theme_selected_bg_color #cba6f7;
+@define-color theme_selected_fg_color #11111b;
 
 @define-color popover_bg_color #181825;
 @define-color popover_fg_color #cdd6f4;
@@ -77,7 +77,6 @@ toolbar.osd,
   margin-bottom: 0;
 }
 
-/* Remove internal borders & margins from headerbar child boxes */
 headerbar box,
 headerbar.titlebar box,
 .titlebar box,
@@ -94,39 +93,141 @@ headerbar > box,
   padding-bottom: 0;
 }
 
-/* Pathbar & Button Styling */
-headerbar .path-bar,
-headerbar .path-bar button,
-headerbar .path-bar box,
-.path-bar,
+/* =============================================================================
+   HEADERBAR & DIALOG BUTTON STYLING (CANCEL, SELECT, OPEN, SEARCH, ETC.)
+   ============================================================================= */
+
 headerbar button,
 .titlebar button,
 window.csd headerbar button,
 window.csd .titlebar button,
-toolbar.osd button,
-.osd button,
-headerbar entry {
+dialog headerbar button,
+dialog actionbar button,
+filechooser headerbar button,
+button.flat,
+button.text-button {
   background-color: transparent;
   background-image: none;
   color: #cdd6f4;
   border: none;
+  outline: none;
   box-shadow: none;
-  padding: 4px 8px;
+  padding: 6px 12px;
   min-height: 30px;
-  margin-top: 0;
-  margin-bottom: 0;
   border-radius: 8px;
+  font-weight: 500;
 }
 
+/* HOVER = LIGHTER TRANSLUCENT PURPLE (rgba(203, 166, 247, 0.18)) */
 headerbar button:hover,
 .titlebar button:hover,
 window.csd headerbar button:hover,
 window.csd .titlebar button:hover,
-toolbar.osd button:hover,
-.osd button:hover,
+dialog headerbar button:hover,
+dialog actionbar button:hover,
+filechooser headerbar button:hover,
+button.flat:hover,
+button.text-button:hover {
+  background-color: rgba(203, 166, 247, 0.18);
+  color: #cba6f7;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* SELECT / SUGGESTED ACTION = SOLID PURPLE (#cba6f7) */
+button.suggested-action,
+headerbar button.suggested-action,
+filechooser button.suggested-action,
+headerbar button:active,
+button:active {
+  background-color: #cba6f7;
+  color: #11111b;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+button.suggested-action:hover,
+headerbar button.suggested-action:hover,
+filechooser button.suggested-action:hover {
+  background-color: #b4befe;
+  color: #11111b;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Pathbar & Navigation Breadcrumbs */
+.path-bar,
+pathbar {
+  background-color: transparent;
+  color: #cdd6f4;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.path-bar button,
+pathbar button,
+headerbar .path-bar button,
+headerbar pathbar button {
+  background-color: transparent;
+  background-image: none;
+  color: #cdd6f4;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 3px 6px;
+  margin: 0 1px;
+  min-height: 28px;
+  border-radius: 6px;
+}
+
+/* HOVER = LIGHTER TRANSLUCENT PURPLE FOR PATHBAR */
+.path-bar button:hover,
+pathbar button:hover,
 headerbar .path-bar button:hover {
   background-color: rgba(203, 166, 247, 0.18);
   color: #cba6f7;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.path-bar button *,
+pathbar button *,
+.path-bar button box,
+pathbar button box,
+.path-bar button widget,
+pathbar button widget,
+.path-bar button image,
+pathbar button image,
+.path-bar button label,
+pathbar button label {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.path-bar button image,
+pathbar button image,
+.path-bar button icon,
+pathbar button icon {
+  margin-right: 4px;
+  margin-left: 0;
+  padding: 0;
+}
+
+.path-bar button label,
+pathbar button label {
+  margin: 0;
+  padding: 0;
 }
 
 headerbar button.close,
@@ -142,7 +243,248 @@ headerbar button.close:hover,
   color: #11111b;
 }
 
-/* Popover, Context Menu & Dropdown Single Outer Border (No Inner Stacking) */
+/* =============================================================================
+   GTK3 / GTK4 / LIBADWAITA FILE CHOOSER, LISTS, GRIDVIEW & ROW SELECTION
+   ============================================================================= */
+
+/* Base View Containers */
+treeview,
+treeview.view,
+list,
+listview,
+columnview,
+gridview,
+flowbox,
+filechooser,
+filechooser treeview,
+filechooser listview,
+filechooser columnview,
+filechooser grid,
+filechooser stack {
+  background-color: #11111b;
+  color: #cdd6f4;
+  border: none;
+  outline: none;
+}
+
+/* HOVER = LIGHTER TRANSLUCENT PURPLE (rgba(203, 166, 247, 0.18)) */
+treeview row:hover,
+treeview.view row:hover,
+list row:hover,
+listview row:hover,
+columnview row:hover,
+gridview child:hover,
+flowbox child:hover,
+filechooser treeview row:hover,
+filechooser listview row:hover,
+filechooser columnview row:hover {
+  background-color: rgba(203, 166, 247, 0.18);
+  color: #cba6f7;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+treeview row:hover label,
+treeview row:hover image,
+treeview row:hover icon,
+listview row:hover label,
+columnview row:hover label,
+gridview child:hover label,
+gridview child:hover image,
+gridview child:hover icon,
+flowbox child:hover label,
+flowbox child:hover image,
+filechooser treeview row:hover label,
+filechooser treeview row:hover image,
+filechooser treeview row:hover icon,
+filechooser listview row:hover label,
+filechooser columnview row:hover label {
+  color: #cba6f7;
+}
+
+/* SELECT = SOLID ACCENT PURPLE (#cba6f7) WITH DARK TEXT (#11111b) */
+treeview:selected,
+treeview:selected:focus,
+treeview row:selected,
+treeview row:selected:focus,
+treeview.view:selected,
+treeview.view:selected:focus,
+treeview cell:selected,
+list row:selected,
+list row:selected:focus,
+listview row:selected,
+listview row:selected:focus,
+columnview row:selected,
+columnview row:selected:focus,
+columnview row:selected cell,
+columnview cell:selected,
+gridview child:selected,
+gridview child:selected:focus,
+flowbox child:selected,
+flowbox child:selected:focus,
+filechooser treeview row:selected,
+filechooser treeview row:selected:focus,
+filechooser treeview:selected,
+filechooser listview row:selected,
+filechooser columnview row:selected,
+filechooser columnview row:selected cell,
+row:selected,
+row:selected:focus,
+cell:selected,
+selection,
+*:selected {
+  background-color: #cba6f7;
+  color: #11111b;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Ensure inner labels, images, icons, and text cells inside selected items use dark text */
+treeview:selected label,
+treeview:selected image,
+treeview:selected icon,
+treeview row:selected label,
+treeview row:selected image,
+treeview row:selected icon,
+treeview cell:selected label,
+list row:selected label,
+listview row:selected label,
+listview row:selected cell,
+columnview row:selected label,
+columnview row:selected cell,
+gridview child:selected label,
+gridview child:selected image,
+gridview child:selected icon,
+flowbox child:selected label,
+flowbox child:selected image,
+filechooser treeview row:selected label,
+filechooser treeview row:selected image,
+filechooser treeview row:selected icon,
+filechooser columnview row:selected label,
+filechooser columnview row:selected cell,
+filechooser listview row:selected label,
+filechooser listview row:selected cell,
+row:selected label,
+row:selected image,
+row:selected icon,
+row:selected cell {
+  color: #11111b;
+}
+
+/* =============================================================================
+   FILECHOOSER & NAUTILUS SIDEBAR STYLING
+   ============================================================================= */
+
+filechooser .sidebar,
+filechooser .sidebar treeview,
+filechooser .sidebar list,
+filechooser .sidebar listview,
+.navigation-sidebar,
+filechooser stack,
+filechooser box {
+  background-color: #11111b;
+  color: #cdd6f4;
+  border: none;
+  box-shadow: none;
+}
+
+/* Sidebar Row Base & Padding */
+filechooser .sidebar row,
+filechooser .sidebar .sidebar-row,
+.navigation-sidebar row,
+.sidebar-row {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 6px 10px;
+  margin: 1px 0;
+  border-radius: 8px;
+  color: #cdd6f4;
+}
+
+filechooser .sidebar row *,
+filechooser .sidebar .sidebar-row *,
+.navigation-sidebar row *,
+.sidebar-row * {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* HOVER = LIGHTER TRANSLUCENT PURPLE (rgba(203, 166, 247, 0.18)) */
+filechooser .sidebar row:hover,
+filechooser .sidebar .sidebar-row:hover,
+.navigation-sidebar row:hover,
+.sidebar-row:hover {
+  background-color: rgba(203, 166, 247, 0.18);
+  color: #cba6f7;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+filechooser .sidebar row:hover label,
+filechooser .sidebar row:hover image,
+filechooser .sidebar row:hover icon,
+.navigation-sidebar row:hover label,
+.navigation-sidebar row:hover image,
+.navigation-sidebar row:hover icon,
+.sidebar-row:hover label,
+.sidebar-row:hover image,
+.sidebar-row:hover icon {
+  color: #cba6f7;
+}
+
+/* SELECT = SOLID ACCENT PURPLE (#cba6f7) WITH DARK TEXT (#11111b) */
+filechooser .sidebar row:selected,
+filechooser .sidebar row:selected:focus,
+filechooser .sidebar .sidebar-row:selected,
+.navigation-sidebar row:selected,
+.navigation-sidebar row:selected:focus,
+.sidebar-row:selected,
+.sidebar-row:selected:focus {
+  background-color: #cba6f7;
+  color: #11111b;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+filechooser .sidebar image,
+filechooser .sidebar icon,
+.navigation-sidebar image,
+.navigation-sidebar icon,
+.sidebar-row image,
+.sidebar-row icon {
+  margin-right: 8px;
+  padding-right: 2px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+filechooser .sidebar row:selected label,
+filechooser .sidebar row:selected image,
+filechooser .sidebar row:selected icon,
+.navigation-sidebar row:selected label,
+.navigation-sidebar row:selected image,
+.navigation-sidebar row:selected icon,
+.sidebar-row:selected label,
+.sidebar-row:selected image,
+.sidebar-row:selected icon {
+  color: #11111b;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Popover, Context Menu & Dropdown */
 popover,
 popover.menu,
 .menu,
@@ -172,13 +514,10 @@ popover box {
   margin: 0;
 }
 
-/* Soft, Translucent Hover Effects for Menus, Popovers, & Lists */
 popover list,
 popover.menu modelbutton,
 popover modelbutton,
-menuitem,
-.sidebar-row,
-row {
+menuitem {
   border-radius: 8px;
   color: #cdd6f4;
 }
@@ -188,15 +527,12 @@ popover modelbutton:selected,
 popover.menu modelbutton:hover,
 popover.menu modelbutton:selected,
 menuitem:hover,
-.menuitem:hover,
-.sidebar-row:hover,
-row:hover,
-row:selected {
+.menuitem:hover {
   background-color: rgba(203, 166, 247, 0.18);
   color: #cba6f7;
 }
 
-/* Tooltips (Single Outer Border & Clean Padding) */
+/* Tooltips */
 tooltip,
 tooltip.background {
   background-color: #181825;
@@ -217,7 +553,7 @@ tooltip > * {
   margin: 0;
 }
 
-/* GTKSourceView / TextView / Sushi Quick Preview / GNOME Text Editor */
+/* GTKSourceView / TextView / Sushi Quick Preview */
 window.sushi-font-widget,
 window.sushi-text-widget,
 window.sushi-viewport,
