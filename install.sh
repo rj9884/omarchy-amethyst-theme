@@ -26,7 +26,7 @@ mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0" "$HOME/.config/walker" 
 # Dynamic GTK CSS imports
 cat > "$HOME/.config/gtk-3.0/gtk.css" << EOF
 /* Dynamic GTK Theme Import for Omarchy */
-@import url("file:///home/dev/.config/omarchy/current/theme/gtk.css");
+@import url("file://$HOME/.config/omarchy/current/theme/gtk.css");
 EOF
 cp -f "$HOME/.config/gtk-3.0/gtk.css" "$HOME/.config/gtk-4.0/gtk.css"
 
@@ -40,7 +40,7 @@ fi
 # Dynamic Walker Launcher style import
 cat > "$HOME/.config/walker/style.css" << EOF
 /* Dynamic Walker Stylesheet for Omarchy */
-@import url("file:///home/dev/.config/omarchy/current/theme/walker.css");
+@import url("file://$HOME/.config/omarchy/current/theme/walker.css");
 EOF
 
 # Dynamic Mako notification config symlink
