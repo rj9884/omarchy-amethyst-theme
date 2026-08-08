@@ -56,6 +56,26 @@
 @define-color dialog_bg_color {{ color0 }};
 @define-color dialog_fg_color {{ foreground }};
 
+/* Window & HeaderBar Rounded Corners */
+window,
+window.csd,
+window.background,
+.background,
+nautilus-window,
+.nautilus-window,
+window.nautilus-window,
+window.dialog,
+dialog.background {
+  border-radius: 12px;
+}
+
+headerbar,
+headerbar.titlebar,
+.titlebar,
+adw-header-bar {
+  border-radius: 12px 12px 0 0;
+}
+
 /* Base Window, Nautilus, Text Editor & Application Backgrounds */
 window,
 window.csd,
