@@ -97,15 +97,6 @@ window.nautilus-window,
 .nautilus-window adw-bin,
 .nautilus-window adw-view-stack,
 .nautilus-window adw-tab-bar,
-headerbar,
-headerbar.titlebar,
-.titlebar,
-toolbar.osd,
-.osd,
-.osd toolbar,
-.osd headerbar,
-windowtitle,
-windowheader,
 view,
 .view,
 viewport,
@@ -136,17 +127,29 @@ editor,
   color: @window_fg_color;
 }
 
-/* HeaderBar Seamless Alignment */
+/* HeaderBar Background Stability Across ALL States (Hover, Focus, Backdrop) */
 headerbar,
 headerbar.titlebar,
 .titlebar,
 adw-header-bar,
-toolbar.osd,
-.osd,
-.osd toolbar,
-.osd headerbar,
+headerbar:hover,
+headerbar:focus,
+headerbar:focus-within,
+headerbar:backdrop,
+.titlebar:hover,
+.titlebar:focus,
+.titlebar:backdrop,
+adw-header-bar:hover,
+adw-header-bar:focus,
+adw-header-bar:backdrop,
+filechooser headerbar,
+filechooser headerbar:hover,
+filechooser headerbar:focus,
+filechooser headerbar:backdrop,
 windowtitle,
 windowheader {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
   border: none;
   border-bottom: none;
   box-shadow: none;
@@ -187,7 +190,7 @@ tab indicator,
   border: none;
 }
 
-/* Buttons in Headerbar */
+/* Buttons in Headerbar & Dialogs */
 headerbar button,
 .titlebar button,
 window.csd headerbar button,
@@ -225,18 +228,26 @@ button.text-button:hover {
   box-shadow: none;
 }
 
+/* Suggested Action Buttons ("Select", "Save", "Open") - High Contrast Text */
 button.suggested-action,
 headerbar button.suggested-action,
 filechooser button.suggested-action,
-headerbar button:active,
-button:active {
+dialog button.suggested-action,
+button.suggested-action:hover,
+headerbar button.suggested-action:hover,
+filechooser button.suggested-action:hover,
+dialog button.suggested-action:hover,
+button.suggested-action:focus,
+headerbar button.suggested-action:focus,
+filechooser button.suggested-action:focus,
+dialog button.suggested-action:focus {
   background-color: @accent_color;
   color: @background;
   border: none;
   outline: none;
   box-shadow: none;
   font-weight: bold;
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: 6px;
 }
 
@@ -312,7 +323,7 @@ row:selected icon {
   color: @background;
 }
 
-/* Completely Remove Extra Background Boxes, Thick Borders & Outer Shadow Glow Boxes */
+/* Single Layer Popovers, Context Menus & Dialogs */
 popover,
 popover.menu,
 popover.background,
