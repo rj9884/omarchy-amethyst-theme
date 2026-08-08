@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Omarchy Hook: Dynamically update VS Code, Code - OSS, VSCodium, Cursor, & Antigravity colors based on active theme
+set -e
+
+CURRENT_THEME_CUSTOM="$HOME/.config/omarchy/current/theme/vscode_customizations.json"
+
+if [ -f "$CURRENT_THEME_CUSTOM" ]; then
+  python3 -c "
+import json, os
+
+custom_file = os.path.expanduser('$CURRENT_THEME_CUSTOM')
+with open(custom_file, 'r') as f:
+    custom_colors = json.load(f)
+
+targets = [
+    '~/.config/Code/User/settings.json',
+    '~/.config/Code - OSS/User/settings.json',
+    '~/.config/VSCodium/User/settings.json',
+    '~/.config/Cursor/User/settings.json',
+    '~/.config/Antigravity/User/settings.json',
+    '~/.config/antigravity/User/settings.json'
+]
+
+for t in targets:
+    path = os.path.expanduser(t)
+    if os.path.isfile(path):
+        try:
+            with open(path, 'r') as f:
+                data = json.load(f)
+            if 'workbench.colorCustomizations' not in data:
+                data['workbench.colorCustomizations'] = {}
+            for k, v in custom_colors.items():
+                data['workbench.colorCustomizations'][k] = v
+            with open(path, 'w') as f:
+                json.dump(data, f, indent=2)
+        except Exception as e:
+            print(f'Error updating {path}: {e}')
+" 2>/dev/null || true
+fi

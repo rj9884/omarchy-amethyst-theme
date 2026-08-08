@@ -66,9 +66,14 @@ if [ -f "$HYPR_BINDINGS" ] && ! grep -q "OMARCHY_LOCK_ONLY=true omarchy-system-l
   echo "bindd = SUPER CTRL, L, Lock system, exec, OMARCHY_LOCK_ONLY=true omarchy-system-lock" >> "$HYPR_BINDINGS"
 fi
 
-# 4. Deploy User Templates to ~/.config/omarchy/themed/
+# 4. Deploy User Templates & Hooks to ~/.config/omarchy/
 if [ -d "$THEME_DIR/themed" ]; then
   cp -rf "$THEME_DIR/themed/"* "$HOME/.config/omarchy/themed/" 2>/dev/null || true
+fi
+if [ -d "$THEME_DIR/hooks" ]; then
+  mkdir -p "$HOME/.config/omarchy/hooks/theme-set.d"
+  cp -rf "$THEME_DIR/hooks/"* "$HOME/.config/omarchy/hooks/theme-set.d/" 2>/dev/null || true
+  chmod +x "$HOME/.config/omarchy/hooks/theme-set.d/"* 2>/dev/null || true
 fi
 
 # Remove any hardcoded GTK_THEME env overrides
