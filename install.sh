@@ -57,6 +57,15 @@ gtk-application-prefer-dark-theme = 1
 EOF
 cp -f "$HOME/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
 
+# Configure lock shortcut override if needed
+HYPR_BINDINGS="$HOME/.config/hypr/bindings.conf"
+if [ -f "$HYPR_BINDINGS" ] && ! grep -q "OMARCHY_LOCK_ONLY=true omarchy-system-lock" "$HYPR_BINDINGS"; then
+  echo "" >> "$HYPR_BINDINGS"
+  echo "# Screen Locking" >> "$HYPR_BINDINGS"
+  echo "unbind = SUPER CTRL, L" >> "$HYPR_BINDINGS"
+  echo "bindd = SUPER CTRL, L, Lock system, exec, OMARCHY_LOCK_ONLY=true omarchy-system-lock" >> "$HYPR_BINDINGS"
+fi
+
 # 4. Deploy User Templates to ~/.config/omarchy/themed/
 if [ -d "$THEME_DIR/themed" ]; then
   cp -rf "$THEME_DIR/themed/"* "$HOME/.config/omarchy/themed/" 2>/dev/null || true
