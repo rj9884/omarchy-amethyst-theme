@@ -7,44 +7,63 @@
 @define-color hover {{ accent }};
 @define-color selected-box {{ accent }};
 
-window {
-  background: transparent;
-}
-
-window .search-container,
-window .search {
-  background: alpha(@base, 0.95);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
-  color: @foreground;
-  border: 1px solid alpha(@border, 0.3);
-  border-radius: 12px;
-  padding: 6px 16px;
-  font-size: 13px;
-  font-weight: 500;
+/* Completely Eliminate Outer Blurred Boxes, Shadow Frames & Double Borders */
+window,
+window.background,
+window #Window,
+.window {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .box-wrapper {
-  background: alpha(@base, 0.95);
-  border: 1px solid alpha(@border, 0.3);
-  border-radius: 16px;
-  padding: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background-color: {{ background }} !important;
+  color: {{ foreground }} !important;
+  border: 1px solid alpha({{ color8 }}, 0.3) !important;
+  border-radius: 14px !important;
+  padding: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+window .search-container,
+window .search,
+.search-container {
+  background-color: {{ color0 }} !important;
+  color: {{ foreground }} !important;
+  border: 1px solid alpha({{ color8 }}, 0.25) !important;
+  border-radius: 10px !important;
+  padding: 6px 14px !important;
+  margin-bottom: 8px !important;
+}
+
+.input {
+  color: {{ foreground }} !important;
+  font-size: 14px !important;
+}
+
+child {
+  border-radius: 8px !important;
+  margin: 2px 0 !important;
 }
 
 child:selected {
-  border-radius: 10px;
-  background-color: alpha(@selected-box, 0.2);
-  color: @selected-text;
-  box-shadow: none;
-  transition: background-color 0.15s ease;
+  border-radius: 8px !important;
+  background-color: alpha({{ accent }}, 0.2) !important;
+  color: {{ accent }} !important;
+  box-shadow: none !important;
 }
 
 child:selected .item-box * {
-  color: @selected-text;
+  color: {{ accent }} !important;
 }
 
 child:hover {
-  background-color: alpha(@hover, 0.12);
-  color: @hover;
-  border-radius: 10px;
+  background-color: alpha({{ accent }}, 0.12) !important;
+  color: {{ accent }} !important;
+  border-radius: 8px !important;
 }
