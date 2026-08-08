@@ -7,7 +7,7 @@
 @define-color hover {{ accent }};
 @define-color selected-box {{ accent }};
 
-/* Universal 16px Rounding for Standard & Dmenu Walker Launcher Windows */
+/* Universal Rounded Corners for Walker Launcher Windows & Containers */
 window,
 window.background,
 window.dmenu,
@@ -40,7 +40,7 @@ window .search,
   background-color: {{ color0 }} !important;
   color: {{ foreground }} !important;
   border: 1px solid alpha({{ color8 }}, 0.25) !important;
-  border-radius: 10px !important;
+  border-radius: 12px !important;
   padding: 6px 14px !important;
   margin-bottom: 8px !important;
 }
@@ -50,12 +50,18 @@ window .search,
   font-size: 14px !important;
 }
 
-child {
+child,
+child > *,
+.item-box,
+.item-text-box {
   border-radius: 8px !important;
   margin: 2px 0 !important;
 }
 
-child:selected {
+child:selected,
+child:selected *,
+child:selected .item-box,
+child:selected .item-text-box {
   border-radius: 8px !important;
   background-color: alpha({{ accent }}, 0.2) !important;
   color: {{ accent }} !important;
@@ -66,7 +72,9 @@ child:selected .item-box * {
   color: {{ accent }} !important;
 }
 
-child:hover {
+child:hover,
+child:hover *,
+child:hover .item-box {
   background-color: alpha({{ accent }}, 0.12) !important;
   color: {{ accent }} !important;
   border-radius: 8px !important;
