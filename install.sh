@@ -30,6 +30,13 @@ cat > "$HOME/.config/gtk-3.0/gtk.css" << EOF
 EOF
 cp -f "$HOME/.config/gtk-3.0/gtk.css" "$HOME/.config/gtk-4.0/gtk.css"
 
+# Fix Walker default theme CSS rule order and enforce border-radius
+WALKER_DEF_CSS="$HOME/.local/share/omarchy/default/walker/themes/omarchy-default/style.css"
+if [ -f "$WALKER_DEF_CSS" ]; then
+  sed -i "s|padding: 20px;|padding: 12px; border-radius: 16px;|g" "$WALKER_DEF_CSS" 2>/dev/null || true
+  sed -i "s|child:selected {|child:selected { border-radius: 8px;|g" "$WALKER_DEF_CSS" 2>/dev/null || true
+fi
+
 # Dynamic Walker Launcher style import
 cat > "$HOME/.config/walker/style.css" << EOF
 /* Dynamic Walker Stylesheet for Omarchy */
