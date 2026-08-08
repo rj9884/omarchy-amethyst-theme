@@ -1,5 +1,5 @@
 /* =============================================================================
-   DYNAMIC GTK 3, GTK 4 & LIBADWAITA THEME TEMPLATE FOR OMARCY
+   DYNAMIC GTK 3, GTK 4 & LIBADWAITA THEME TEMPLATE FOR OMARCY (COMPACT DESIGN)
    ============================================================================= */
 
 @define-color background     {{ background }};
@@ -65,21 +65,23 @@ nautilus-window,
 .nautilus-window,
 window.nautilus-window,
 window.dialog,
+window.quick-preview,
 dialog.background {
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 headerbar,
 headerbar.titlebar,
 .titlebar,
 adw-header-bar {
-  border-radius: 12px 12px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 /* Base Window, Nautilus, Text Editor & Application Backgrounds */
 window,
 window.csd,
 window.background,
+window.quick-preview,
 .background,
 nautilus-window,
 .nautilus-window,
@@ -122,12 +124,14 @@ sourceview text,
 textview,
 textview text,
 editor,
-.editor {
+.editor,
+.sushi-viewport,
+window.quick-preview {
   background-color: @window_bg_color;
   color: @window_fg_color;
 }
 
-/* HeaderBar Background Stability Across ALL States (Hover, Focus, Backdrop) */
+/* HeaderBar Background Stability Across ALL States */
 headerbar,
 headerbar.titlebar,
 .titlebar,
@@ -153,7 +157,6 @@ windowheader {
   border: none;
   border-bottom: none;
   box-shadow: none;
-  margin: 0;
 }
 
 headerbar box,
@@ -166,8 +169,75 @@ headerbar > box,
   border: none;
   border-bottom: none;
   box-shadow: none;
-  margin: 0;
-  padding: 0;
+}
+
+/* Compact PathBar / Navigation Address Bar */
+pathbar,
+.path-bar {
+  margin: 0 4px;
+  padding: 1px 2px;
+}
+
+pathbar button,
+.path-bar button {
+  padding: 2px 6px;
+  margin: 0 1px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: @foreground;
+  border: none;
+}
+
+pathbar button image,
+pathbar button icon,
+.path-bar button image,
+.path-bar button icon {
+  margin-right: 4px;
+}
+
+pathbar button label,
+.path-bar button label {
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+pathbar button:hover,
+.path-bar button:hover {
+  background-color: rgba({{ accent_rgb }}, 0.18);
+  color: @accent_color;
+}
+
+/* Compact Sidebar Row Spacing */
+.navigation-sidebar row,
+filechooser .sidebar row,
+placesview row,
+.sidebar-row,
+sidebar row,
+.navigation-sidebar listview row,
+filechooser listview row,
+.navigation-sidebar treeview row,
+filechooser treeview row {
+  min-height: 28px;
+  padding: 3px 8px;
+  margin: 1px 2px;
+  border-radius: 6px;
+  color: @foreground;
+}
+
+.navigation-sidebar row label,
+filechooser .sidebar row label,
+placesview row label,
+.sidebar-row label {
+  color: @foreground;
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+.navigation-sidebar row image,
+filechooser .sidebar row image,
+placesview row image,
+.sidebar-row image {
+  margin-right: 6px;
 }
 
 /* Tab Bar & Underline Fixes */
@@ -190,7 +260,7 @@ tab indicator,
   border: none;
 }
 
-/* Buttons in Headerbar & Dialogs */
+/* Compact Buttons in Headerbar & Dialogs */
 headerbar button,
 .titlebar button,
 window.csd headerbar button,
@@ -206,10 +276,9 @@ button.text-button {
   border: none;
   outline: none;
   box-shadow: none;
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 3px 8px;
+  border-radius: 5px;
   font-weight: 500;
-  margin: 0;
 }
 
 headerbar button:hover,
@@ -228,7 +297,7 @@ button.text-button:hover {
   box-shadow: none;
 }
 
-/* Suggested Action Buttons ("Select", "Save", "Open") - High Contrast Text */
+/* Suggested Action Buttons ("Select", "Save", "Open") */
 button.suggested-action,
 headerbar button.suggested-action,
 filechooser button.suggested-action,
@@ -247,8 +316,8 @@ dialog button.suggested-action:focus {
   outline: none;
   box-shadow: none;
   font-weight: bold;
-  padding: 4px 14px;
-  border-radius: 6px;
+  padding: 3px 12px;
+  border-radius: 5px;
 }
 
 /* Row Hover and Selection Colors */
@@ -352,8 +421,8 @@ menu,
   border: none;
   outline: none;
   box-shadow: none;
-  border-radius: 10px;
-  padding: 6px;
+  border-radius: 8px;
+  padding: 4px;
 }
 
 popover box,
@@ -381,7 +450,7 @@ dialog .dialog-vbox,
 window.dialog {
   background-color: @card_bg_color;
   color: @foreground;
-  border-radius: 12px;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
 }
@@ -390,9 +459,9 @@ popover modelbutton,
 popover.menu modelbutton,
 menuitem,
 .menuitem {
-  min-height: 28px;
-  padding: 4px 10px;
-  border-radius: 6px;
+  min-height: 24px;
+  padding: 3px 8px;
+  border-radius: 5px;
   color: @foreground;
   border: none;
   box-shadow: none;
@@ -406,4 +475,46 @@ menuitem:hover,
   color: @accent_color;
   border: none;
   box-shadow: none;
+}
+
+/* Dynamic Toast Banner Notifications (e.g. "37 files moved to trash") */
+toast,
+.toast,
+toast.background,
+adw-toast,
+adw-toast-overlay toast {
+  background-color: @card_bg_color;
+  color: @foreground;
+  border-radius: 9999px;
+  border: 1px solid rgba({{ accent_rgb }}, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 6px 16px;
+}
+
+toast label,
+.toast label {
+  color: @foreground;
+  font-weight: bold;
+}
+
+toast button,
+.toast button {
+  background-color: transparent;
+  color: @accent_color;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+toast button:hover,
+.toast button:hover {
+  background-color: rgba({{ accent_rgb }}, 0.18);
+  color: @accent_color;
+}
+
+toast button.close,
+.toast button.close {
+  color: @foreground;
 }
