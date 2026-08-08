@@ -20,74 +20,60 @@ fi
 mkdir -p "$USER_THEME_DEST"
 cp -rf "$THEME_DIR/"* "$USER_THEME_DEST/"
 
-# 3. Setup GTK 3 & GTK 4 styles
-mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0"
-if [ -f "$THEME_DIR/gtk-3.0/gtk.css" ]; then
-  cp -f "$THEME_DIR/gtk-3.0/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
-else
-  cp -f "$THEME_DIR/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
-fi
+# 3. Configure Dynamic User Overrides in ~/.config/ (Never in ~/.local/share/omarchy)
+mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0" "$HOME/.config/walker" "$HOME/.config/mako" "$HOME/.config/omarchy/themed" "$HOME/.config/omarchy/hooks"
 
-if [ -f "$THEME_DIR/gtk-4.0/gtk.css" ]; then
-  cp -f "$THEME_DIR/gtk-4.0/gtk.css" "$HOME/.config/gtk-4.0/gtk.css"
-else
-  cp -f "$THEME_DIR/gtk.css" "$HOME/.config/gtk-4.0/gtk.css"
-fi
+# Dynamic GTK CSS imports
+cat > "$HOME/.config/gtk-3.0/gtk.css" << EOF
+/* Dynamic GTK Theme Import for Omarchy */
+@import url("file:///home/dev/.config/omarchy/current/theme/gtk.css");
+EOF
+cp -f "$HOME/.config/gtk-3.0/gtk.css" "$HOME/.config/gtk-4.0/gtk.css"
 
-# GTK3 dark settings
-cat > "$HOME/.config/gtk-3.0/settings.ini" << 'EOF'
+# Dynamic Walker Launcher style import
+cat > "$HOME/.config/walker/style.css" << EOF
+/* Dynamic Walker Stylesheet for Omarchy */
+@import url("file:///home/dev/.config/omarchy/current/theme/walker.css");
+EOF
+
+# Dynamic Mako notification config symlink
+rm -f "$HOME/.config/mako/config" 2>/dev/null || true
+ln -s "$HOME/.config/omarchy/current/theme/mako.ini" "$HOME/.config/mako/config" 2>/dev/null || true
+
+# GTK settings
+cat > "$HOME/.config/gtk-3.0/settings.ini" << EOF
 [Settings]
 gtk-theme-name = omarchy-amethyst-theme
 gtk-icon-theme-name = Yaru-blue
 gtk-font-name = FiraCode Nerd Font 10
 gtk-application-prefer-dark-theme = 1
 EOF
+cp -f "$HOME/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
 
-# 4. GtkSourceView schemes (for GNOME Text Editor & Sushi)
-mkdir -p "$HOME/.local/share/gtksourceview-4/styles"
-mkdir -p "$HOME/.local/share/gtksourceview-5/styles"
-mkdir -p "$HOME/.local/share/sushi/gtksourceview-4/styles"
-mkdir -p "$HOME/.local/share/sushi/styles"
-
-if [ -f "$THEME_DIR/gtksourceview/amethyst.xml" ]; then
-  cp -f "$THEME_DIR/gtksourceview/amethyst.xml" "$HOME/.local/share/gtksourceview-4/styles/"
-  cp -f "$THEME_DIR/gtksourceview/amethyst.xml" "$HOME/.local/share/gtksourceview-5/styles/"
+# 4. Deploy User Templates to ~/.config/omarchy/themed/
+if [ -d "$THEME_DIR/themed" ]; then
+  cp -rf "$THEME_DIR/themed/"* "$HOME/.config/omarchy/themed/" 2>/dev/null || true
 fi
 
-if [ -f "$THEME_DIR/gtksourceview/builder-dark.style-scheme.xml" ]; then
-  cp -f "$THEME_DIR/gtksourceview/builder-dark.style-scheme.xml" "$HOME/.local/share/gtksourceview-4/styles/"
-  cp -f "$THEME_DIR/gtksourceview/builder-dark.style-scheme.xml" "$HOME/.local/share/gtksourceview-5/styles/"
-  cp -f "$THEME_DIR/gtksourceview/builder-dark.style-scheme.xml" "$HOME/.local/share/sushi/gtksourceview-4/styles/"
-  cp -f "$THEME_DIR/gtksourceview/builder-dark.style-scheme.xml" "$HOME/.local/share/sushi/styles/"
-fi
-
-# System-wide sushi update if non-interactive sudo access exists
-if command -v sudo &>/dev/null && sudo -n true 2>/dev/null && [ -f /usr/share/sushi/gtksourceview-4/styles/builder-dark.style-scheme.xml ]; then
-  sudo -n sed -i 's|value="#1e1e1e"|value="#11111b"|g' /usr/share/sushi/gtksourceview-4/styles/builder-dark.style-scheme.xml 2>/dev/null || true
-  sudo -n sed -i 's|value="#303030"|value="#181825"|g' /usr/share/sushi/gtksourceview-4/styles/builder-dark.style-scheme.xml 2>/dev/null || true
-fi
+# Remove any hardcoded GTK_THEME env overrides
+rm -f "$HOME/.config/environment.d/gtk_theme.conf" 2>/dev/null || true
 
 # GNOME settings if gsettings available
 if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" 2>/dev/null || true
-  gsettings set org.gnome.desktop.interface gtk-theme "omarchy-amethyst-theme" 2>/dev/null || true
-  gsettings set org.gnome.TextEditor style-scheme "amethyst" 2>/dev/null || true
+  gsettings set org.gnome.TextEditor style-scheme "builder-dark" 2>/dev/null || true
 fi
 
-# 5. Application configs (Walker, Wofi, Cava)
-mkdir -p "$HOME/.config/walker" "$HOME/.config/wofi" "$HOME/.config/cava"
-[ -f "$THEME_DIR/walker.css" ] && cp -f "$THEME_DIR/walker.css" "$HOME/.config/walker/style.css"
-[ -f "$THEME_DIR/wofi.css" ] && cp -f "$THEME_DIR/wofi.css" "$HOME/.config/wofi/style.css"
-[ -f "$THEME_DIR/cava_theme" ] && cp -f "$THEME_DIR/cava_theme" "$HOME/.config/cava/config"
-
-# 6. Apply via Omarchy CLI if present
+# 5. Apply via Omarchy CLI if present
 if command -v omarchy &>/dev/null; then
   omarchy theme set "$THEME_NAME"
 fi
 
-echo "✓ Omarchy Amethyst Theme successfully installed and configured!"
+echo "✓ Omarchy Amethyst Theme successfully installed and configured dynamically in ~/.config!"
 
-
-# Restart desktop portal daemon to apply new GTK CSS immediately
+# Terminate cached processes to reload CSS immediately
+nautilus -q 2>/dev/null || true
+pkill -f nautilus 2>/dev/null || true
+makoctl reload 2>/dev/null || true
 pkill -f xdg-desktop-portal-gtk 2>/dev/null || true
 pkill -f xdg-desktop-portal 2>/dev/null || true
