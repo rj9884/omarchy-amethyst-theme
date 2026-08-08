@@ -7,21 +7,30 @@
 @define-color hover {{ accent }};
 @define-color selected-box {{ accent }};
 
-/* Ensure Walker Windows, Dialogs & Containers Have Smooth Rounded Corners (16px / 12px / 8px) */
+/* Universal 16px Rounding for Standard & Dmenu Walker Launcher Windows */
 window,
 window.background,
+window.dmenu,
 window #Window,
 .window,
 #Window,
+.dmenu,
+#dmenu,
+.dmenu-box,
 .box-wrapper,
 #BoxWrapper,
 .box,
-#Box {
+#Box,
+scrolledwindow,
+.scroll,
+.content-container,
+.list {
   background-color: {{ background }} !important;
   color: {{ foreground }} !important;
   border-radius: 16px !important;
   border: 1px solid alpha({{ color8 }}, 0.3) !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden !important;
 }
 
 window .search-container,
@@ -31,7 +40,7 @@ window .search,
   background-color: {{ color0 }} !important;
   color: {{ foreground }} !important;
   border: 1px solid alpha({{ color8 }}, 0.25) !important;
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   padding: 6px 14px !important;
   margin-bottom: 8px !important;
 }
