@@ -351,6 +351,51 @@ filechooser .sidebar row:hover label,
   color: @accent_color;
 }
 
+/* Sidebar Row Selection matches Hover style with soft tint */
+filechooser .sidebar row:selected,
+.navigation-sidebar row:selected,
+placesview row:selected,
+.sidebar-row:selected,
+sidebar row:selected,
+.navigation-sidebar listview row:selected,
+filechooser listview row:selected,
+.navigation-sidebar treeview row:selected,
+filechooser treeview row:selected {
+  background-color: rgba({{ accent_rgb }}, 0.22);
+  color: @accent_color;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+filechooser .sidebar row:selected label,
+.navigation-sidebar row:selected label,
+placesview row:selected label,
+.sidebar-row:selected label,
+sidebar row:selected label,
+filechooser .sidebar row:selected image,
+.navigation-sidebar row:selected image,
+placesview row:selected image,
+.sidebar-row:selected image,
+sidebar row:selected image,
+filechooser .sidebar row:selected icon,
+.navigation-sidebar row:selected icon,
+placesview row:selected icon,
+.sidebar-row:selected icon,
+sidebar row:selected icon {
+  color: @accent_color;
+}
+
+filechooser .sidebar row:selected:hover,
+.navigation-sidebar row:selected:hover,
+placesview row:selected:hover,
+.sidebar-row:selected:hover,
+sidebar row:selected:hover {
+  background-color: rgba({{ accent_rgb }}, 0.28);
+  color: @accent_color;
+}
+
+/* Other Selected Rows */
 treeview:selected,
 treeview row:selected,
 list row:selected,
@@ -361,12 +406,10 @@ flowbox child:selected,
 filechooser treeview row:selected,
 filechooser listview row:selected,
 filechooser columnview row:selected,
-filechooser .sidebar row:selected,
-.navigation-sidebar row:selected,
 row:selected,
 *:selected {
-  background-color: @accent_color;
-  color: @background;
+  background-color: rgba({{ accent_rgb }}, 0.22);
+  color: @accent_color;
   font-weight: bold;
   border: none;
   outline: none;
@@ -384,12 +427,10 @@ listview row:selected label,
 columnview row:selected label,
 gridview child:selected label,
 filechooser treeview row:selected label,
-filechooser .sidebar row:selected label,
-.navigation-sidebar row:selected label,
 row:selected label,
 row:selected image,
 row:selected icon {
-  color: @background;
+  color: @accent_color;
 }
 
 /* Single Layer Popovers, Context Menus & Dialogs */

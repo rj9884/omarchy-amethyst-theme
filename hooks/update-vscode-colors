@@ -16,9 +16,7 @@ targets = [
     '~/.config/Code/User/settings.json',
     '~/.config/Code - OSS/User/settings.json',
     '~/.config/VSCodium/User/settings.json',
-    '~/.config/Cursor/User/settings.json',
-    '~/.config/Antigravity/User/settings.json',
-    '~/.config/antigravity/User/settings.json'
+    '~/.config/Cursor/User/settings.json'
 ]
 
 for t in targets:

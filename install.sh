@@ -23,10 +23,13 @@ cp -rf "$THEME_DIR/"* "$USER_THEME_DEST/"
 # 3. Configure Dynamic User Overrides in ~/.config/ (Never in ~/.local/share/omarchy)
 mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0" "$HOME/.config/walker" "$HOME/.config/mako" "$HOME/.config/omarchy/themed" "$HOME/.config/omarchy/hooks"
 
+# Ensure compatibility link exists
+ln -sfn "$HOME/.local/state/omarchy/current" "$HOME/.config/omarchy/current" 2>/dev/null || true
+
 # Dynamic GTK CSS imports
 cat > "$HOME/.config/gtk-3.0/gtk.css" << EOF
 /* Dynamic GTK Theme Import for Omarchy */
-@import url("file://$HOME/.config/omarchy/current/theme/gtk.css");
+@import url("file://$HOME/.local/state/omarchy/current/theme/gtk.css");
 EOF
 cp -f "$HOME/.config/gtk-3.0/gtk.css" "$HOME/.config/gtk-4.0/gtk.css"
 
@@ -40,12 +43,12 @@ fi
 # Dynamic Walker Launcher style import
 cat > "$HOME/.config/walker/style.css" << EOF
 /* Dynamic Walker Stylesheet for Omarchy */
-@import url("file://$HOME/.config/omarchy/current/theme/walker.css");
+@import url("file://$HOME/.local/state/omarchy/current/theme/walker.css");
 EOF
 
 # Dynamic Mako notification config symlink
 rm -f "$HOME/.config/mako/config" 2>/dev/null || true
-ln -s "$HOME/.config/omarchy/current/theme/mako.ini" "$HOME/.config/mako/config" 2>/dev/null || true
+ln -s "$HOME/.local/state/omarchy/current/theme/mako.ini" "$HOME/.config/mako/config" 2>/dev/null || true
 
 # GTK settings
 cat > "$HOME/.config/gtk-3.0/settings.ini" << EOF
