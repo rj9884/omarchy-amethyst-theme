@@ -52,6 +52,8 @@
 omarchy-theme-install https://github.com/rj9884/omarchy-amethyst-theme.git
 ```
 
+> **Omarchy 4:** a theme installed this way gets the palette, the wallpapers, the icons, the keyboard color and the gradient border, all set in `colors.toml`. Omarchy doesn't load Lua from installed themes, so `hyprland.lua` (rounding, blur, animations) and `neovim.lua` are skipped. Omarchy generates Neovim, VS Code and terminal themes from `colors.toml` instead. To keep the rounding, blur and animations, copy the parts of `hyprland.lua` you want into `~/.config/hypr/looknfeel.lua`.
+
 Or run the automated setup script after cloning:
 
 ```bash
